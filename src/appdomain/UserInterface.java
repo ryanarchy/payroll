@@ -7,10 +7,7 @@ package appdomain;
 
 import java.util.Date;
 
-/**
- *
- * @Vlad Bilyy
- */
+//Author: Vlad Bilyy 
 public class UserInterface
 {
     public void mainMenu(Employee[] employees)
