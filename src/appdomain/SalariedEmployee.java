@@ -17,8 +17,9 @@ public class SalariedEmployee implements Employee
 {
     HashMap<Short, FiscalYear> calendar;
     
-    String name;
-    Double rate;
+    String name;  //employee name
+    Double rate;  //employee pay rate
+    // instance of calendar class for date lookups
     Calendar cal = Calendar.getInstance();
     
     @Override

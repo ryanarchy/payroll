@@ -89,19 +89,19 @@ public class HourlyEmployee implements Employee
     @Override
     public double getFederalTax(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getGrossPay(year) * .15;
     }
 
     @Override
     public double getStateTax(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getGrossPay(year) * .03;
     }
 
     @Override
     public double getMedicareTax(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getGrossPay(year) * .0145;
     }
 
     @Override
