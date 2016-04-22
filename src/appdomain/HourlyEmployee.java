@@ -65,7 +65,6 @@ public class HourlyEmployee implements Employee
     @Override
     public double getHours(Date date)
     {
-        Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         FiscalYear y = fyCalendar.get((short) cal.get(Calendar.YEAR));
         return y.getDateHours(date);
