@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author ryanarchy
+ * @Vlad Bilyy
  */
 public class UserInterface
 {
