@@ -5,6 +5,7 @@
  */
 package appdomain;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -15,7 +16,11 @@ import java.util.HashMap;
 public class SalariedEmployee implements Employee 
 {
     HashMap<Short, FiscalYear> calendar;
-
+    
+    String name;
+    Double rate;
+    Calendar cal = Calendar.getInstance();
+    
     @Override
     public void setName(String name)
     {
@@ -99,13 +104,13 @@ public class SalariedEmployee implements Employee
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    // ALEX
     @Override
     public double getGrossPay(short year)
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    // ALEX
     @Override
     public double getNetPay(short year)
     {

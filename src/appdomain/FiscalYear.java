@@ -23,6 +23,7 @@ public class FiscalYear
     
     Calendar cal = Calendar.getInstance();
     
+    // RYAN
     public FiscalYear(short year)
     {
         this.year = year;
@@ -31,6 +32,7 @@ public class FiscalYear
         
     }
     
+    // RYAN
     public FiscalYear(String year)
     {
         this.year = Short.parseShort(year);
@@ -38,6 +40,7 @@ public class FiscalYear
         cal.set(Calendar.DAY_OF_YEAR, 1);
     }
     
+    // RYAN
     public FiscalYear(Date year)
     {
         cal.setTime(year);
