@@ -26,18 +26,24 @@ public class FiscalYear
     public FiscalYear(short year)
     {
         this.year = year;
+        cal.set(Calendar.YEAR, (int) this.year);
+        cal.set(Calendar.DAY_OF_YEAR, 1);
+        
     }
     
     public FiscalYear(String year)
     {
         this.year = Short.parseShort(year);
-        
+        cal.set(Calendar.YEAR, (int) this.year);
+        cal.set(Calendar.DAY_OF_YEAR, 1);
     }
     
     public FiscalYear(Date year)
     {
         cal.setTime(year);
         this.year = (short) cal.get(Calendar.YEAR);
+        cal.set(Calendar.YEAR, (int) this.year);
+        cal.set(Calendar.DAY_OF_YEAR, 1);
     }
     
     public HashMap<Date,Double> getPeriod(short period)
@@ -58,7 +64,11 @@ public class FiscalYear
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    /**
+     * this function will return the current year of this fiscal calendar as a 
+     * date object
+     * @return java.util.Date type
+     */
     public Date getYear()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.        
@@ -79,6 +89,11 @@ public class FiscalYear
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    /**
+     * this function will return the total amount of hours worked for this
+     * fiscal year object
+     * @return 
+     */
     public double getTotalHours()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

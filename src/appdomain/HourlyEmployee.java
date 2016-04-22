@@ -73,13 +73,14 @@ public class HourlyEmployee implements Employee
     @Override
     public double getTotalHours(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return fyCalendar.get(year).getTotalHours();
     }
 
     @Override
     public void setHoursWorked(Date date, double hours)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        cal.setTime(date);
+        fyCalendar.get((short) cal.get(Calendar.YEAR)).setDateHours(date, hours);
     }
 
     @Override
@@ -127,7 +128,7 @@ public class HourlyEmployee implements Employee
     @Override
     public FiscalYear getFiscalYear(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return fyCalendar.get((short) cal.get(Calendar.YEAR));
     }
     
 }
