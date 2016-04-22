@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author ryanarchy
+ * @author Alex 
  */
 public class SalariedEmployee implements Employee 
 {
