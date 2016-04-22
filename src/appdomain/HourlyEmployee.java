@@ -89,7 +89,7 @@ public class HourlyEmployee implements Employee
     @Override
     public double getFederalTax(short year)
     {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -120,7 +120,7 @@ public class HourlyEmployee implements Employee
     public double getGrossPay(short year)
     {
         FiscalYear fy = fyCalendar.get((short) cal.get(Calendar.YEAR));
-        
+        return (fy.getTotalHours() * this.getPayRate());
     }
 
     @Override
