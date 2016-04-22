@@ -108,13 +108,13 @@ public class SalariedEmployee implements Employee
     @Override
     public double getGrossPay(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return this.rate;
     }
     // ALEX
     @Override
     public double getNetPay(short year)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.rate - this.getDeductions(year);
     }
 
     @Override
