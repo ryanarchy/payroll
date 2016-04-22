@@ -8,7 +8,6 @@ package appdomain;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 /**
  *
@@ -21,8 +20,12 @@ public class HourlyEmployee implements Employee
     String name;
     Double rate;
     Calendar cal = Calendar.getInstance();
-    
-    
+
+    public HourlyEmployee(String name, Double rate)
+    {
+        this.name = name;
+        this.rate = rate;
+    }
     
     @Override
     public void setName(String name)
