@@ -6,8 +6,8 @@
 package appdomain;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Date;
 import java.util.List;
 
@@ -21,19 +21,23 @@ public class FiscalYear
             new ArrayList<HashMap<Date, Double>>();
     short year;
     
+    Calendar cal = Calendar.getInstance();
+    
     public FiscalYear(short year)
     {
-        
+        this.year = year;
     }
     
     public FiscalYear(String year)
     {
+        this.year = Short.parseShort(year);
         
     }
     
     public FiscalYear(Date year)
     {
-        
+        cal.setTime(year);
+        this.year = (short) cal.get(Calendar.YEAR);
     }
     
     public HashMap<Date,Double> getPeriod(short period)
