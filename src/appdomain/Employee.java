@@ -20,23 +20,27 @@ public interface Employee
     public void setPayRate(double rate);
     public double getPayRate();
     
-    public HashMap<Date,Double> getPayPeriod(short year, short period);
-    public boolean hasYear(short year);
+    public HashMap<Date,Double> getPayPeriod(int year, int period);
+    public boolean hasYear(int year);
     
     public double getHours(Date date);
-    public double getTotalHours(short year);
+    public double getTotalHours(int year);
     public void setHoursWorked(Date date, double hours);
     
-    public double getFederalTax(short year);
-    public double getStateTax(short year);
-    public double getMedicareTax(short year);
-    public double getSocialSecurityTax(short year);
+    public double getFederalTax(int year);
+    public double getStateTax(int year);
+    public double getMedicareTax(int year);
+    public double getSocialSecurityTax(int year);
     
-    public double getDeductions(short year);
-    public double getGrossPay(short year);
-    public double getNetPay(short year);
+    public double getDeductions(int year);
+    public double getGrossPay(int year);
+    public double getNetPay(int year);
     
-    public FiscalYear getFiscalYear(short year);
+    public FiscalYear getFiscalYear(int year);
+    public void addFiscalYear(int year);
+    public void addFiscalYearBefore();
+    public void addFiscalYearAfter();
+    public int[] getFiscalYears();
     
     
 }
