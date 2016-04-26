@@ -19,6 +19,11 @@ public class SalariedEmployee extends HourlyEmployee
         super(name, rate);
     }
     
+    public SalariedEmployee(String name, Double rate, int year)
+    {
+        super(name, rate, year);
+    }
+    
     /**
      * This is the override method that will just return a flat gross salary for
      * salaried employees. 
