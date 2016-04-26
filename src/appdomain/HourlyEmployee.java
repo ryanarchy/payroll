@@ -31,6 +31,8 @@ public class HourlyEmployee implements Employee
     {
         this.name = name;
         this.rate = rate;
+        cal.setTime(new Date());
+        this.addFiscalYear(cal.get(Calendar.YEAR));
     }
     /**
      * This is a basic constructor class that will also create a starting year
