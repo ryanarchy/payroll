@@ -23,10 +23,10 @@ public class SalariedEmployee extends HourlyEmployee
      * This is the override method that will just return a flat gross salary for
      * salaried employees. 
      * @param year
-     * @return 
+     * @return This value is just the employee's pay rate
      */
     @Override
-    public double getGrossPay(short year)
+    public double getGrossPay(int year)
     {
        return this.rate;
     }
