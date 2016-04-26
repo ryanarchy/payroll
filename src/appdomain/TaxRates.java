@@ -16,4 +16,5 @@ public class TaxRates
     public static final float SOCIAL_SECURITY_RATE = (float) 0.062;
     public static final int SOCIAL_SECURITY_MAX = 7347;
     public static final float MEDICARE_TAX_RATE = (float) 0.0145;
+    public static final float OVERTIME_HOURS = (float) 72.0;
 }
