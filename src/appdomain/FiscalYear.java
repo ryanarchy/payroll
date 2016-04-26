@@ -34,7 +34,6 @@ public class FiscalYear
         this.buildYear(cal.getTime());
     }
     
-    // RYAN
     public FiscalYear(String year)
     {
         this.year = Short.parseShort(year);
@@ -43,7 +42,6 @@ public class FiscalYear
         this.buildYear(cal.getTime());
     }
     
-    // RYAN
     public FiscalYear(Date year)
     {
         cal.setTime(year);
