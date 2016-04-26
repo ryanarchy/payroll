@@ -67,7 +67,7 @@ public class FiscalYear
         lastDay.setTime(year);
         lastDay.set(Calendar.MONTH, Calendar.DECEMBER);
         lastDay.set(Calendar.DAY_OF_MONTH, 31);
-        
+    
         GregorianCalendar gcal = new GregorianCalendar();
         gcal.setTime(firstDay.getTime());
         
