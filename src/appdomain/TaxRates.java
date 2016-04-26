@@ -11,5 +11,9 @@ package appdomain;
  */
 public class TaxRates
 {
-    public static final float FEDERAL_TAX_RATE = (float) 0.3;
+    public static final float FEDERAL_TAX_RATE = (float) 0.15;
+    public static final float STATE_TAX_RATE = (float) 0.03;
+    public static final float SOCIAL_SECURITY_RATE = (float) 0.062;
+    public static final int SOCIAL_SECURITY_MAX = 7347;
+    public static final float MEDICARE_TAX_RATE = (float) 0.0145;
 }
