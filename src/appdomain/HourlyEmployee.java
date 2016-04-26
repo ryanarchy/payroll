@@ -32,6 +32,19 @@ public class HourlyEmployee implements Employee
         this.name = name;
         this.rate = rate;
     }
+    /**
+     * This is a basic constructor class that will also create a starting year
+     * for the employee.
+     * @param name This value holds the employee's full name
+     * @param rate this value holds the employee's pay rate in dollars per hour
+     * @param year This is the fiscal year that will be created on the employee
+     */
+    public HourlyEmployee(String name, Double rate, int year)
+    {
+        this.name = name;
+        this.rate = rate;
+        this.addFiscalYear(year);
+    }
     
     /**
      * Setter for employee name.
@@ -202,7 +215,7 @@ public class HourlyEmployee implements Employee
     }
 
     @Override
-    public void addFiscalYear(int year)
+    public final void addFiscalYear(int year)
     {
         if (!this.hasYear(year))
         {
