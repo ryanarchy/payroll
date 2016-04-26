@@ -51,7 +51,7 @@ public class FiscalYear
     
     public HashMap<Date,Double> getPeriod(short period)
     {
-         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.       
+        return this.getPeriod(period);
     }
     
     public void setPeriodHours(char period, double[] hours)
