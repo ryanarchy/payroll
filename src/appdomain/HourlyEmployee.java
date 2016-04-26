@@ -228,8 +228,8 @@ public class HourlyEmployee implements Employee
     public void addFiscalYearAfter()
     {
         TreeSet<Short> years = (TreeSet<Short>) this.fyCalendar.keySet();
-        short yearBefore =  (short) (years.last() + 1);
-        this.addFiscalYear(yearBefore);
+        short yearAfter =  (short) (years.last() + 1);
+        this.addFiscalYear(yearAfter);
     }
 
     @Override
