@@ -6,8 +6,10 @@
 package appdomain;
 
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.DoubleStream;
 
@@ -17,7 +19,7 @@ import java.util.stream.DoubleStream;
  */
 public class HourlyEmployee implements Employee
 {
-    HashMap<Short, FiscalYear> fyCalendar;  //hash map that has year, FiscalYear class pairs.  Year will signify the fiscal year represented for lookup purposes.
+    HashMap<Short, FiscalYear> fyCalendar = new HashMap<>();  //hash map that has year, FiscalYear class pairs.  Year will signify the fiscal year represented for lookup purposes.
     
     String name;
     Double rate;
@@ -45,7 +47,7 @@ public class HourlyEmployee implements Employee
     {
         this.name = name;
         this.rate = rate;
-        this.addFiscalYear(year);
+        this.addFiscalYear((short) year);
     }
     
     /**
@@ -200,20 +202,20 @@ public class HourlyEmployee implements Employee
     @Override
     public double getGrossPay(int year)
     {
-        FiscalYear fy = fyCalendar.get((short) cal.get(Calendar.YEAR));
+        FiscalYear fy = fyCalendar.get((short) year);
         return (fy.getTotalHours() * this.getPayRate());
     }
 
     @Override
     public double getNetPay(int year)
     {
-        return this.getGrossPay(year) + this.getDeductions(year);
+        return this.getGrossPay(year) - this.getDeductions(year);
     }
 
     @Override
     public FiscalYear getFiscalYear(int year)
     {
-        return fyCalendar.get((short) cal.get(Calendar.YEAR));
+        return fyCalendar.get((short) year);
     }
 
     @Override
@@ -233,17 +235,17 @@ public class HourlyEmployee implements Employee
     @Override
     public void addFiscalYearBefore()
     {
-        TreeSet<Short> years = (TreeSet<Short>) this.fyCalendar.keySet();
-        short yearBefore =  (short) (years.first() - 1);
-        this.addFiscalYear(yearBefore);
+        short min = Collections.min(this.fyCalendar.keySet());
+        short yearAfter =  (short) (min + 1);
+        this.addFiscalYear(yearAfter);
         
     }
 
     @Override
     public void addFiscalYearAfter()
     {
-        TreeSet<Short> years = (TreeSet<Short>) this.fyCalendar.keySet();
-        short yearAfter =  (short) (years.last() + 1);
+        short max = Collections.max(this.fyCalendar.keySet());
+        short yearAfter =  (short) (max + 1);
         this.addFiscalYear(yearAfter);
     }
 

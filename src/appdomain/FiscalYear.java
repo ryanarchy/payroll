@@ -78,7 +78,7 @@ public class FiscalYear
                 LinkedHashMap<Date, Double> pp = new LinkedHashMap<>();
                 if (x == 25)
                 {
-                    while (true)
+                    while (gcal.getTime().before(lastDay.getTime()))
                     {
                         gcal.add(Calendar.DAY_OF_YEAR, 1);
                         pp.put(gcal.getTime(), 0.0);
@@ -100,8 +100,15 @@ public class FiscalYear
             
     public LinkedHashMap<Date,Double> getPeriod(int period)
     {
-        return payPeriods.get(period - 1);
+        return payPeriods.get(period);
     }
+
+    public List<LinkedHashMap<Date, Double>> getPayPeriods()
+    {
+        return payPeriods;
+    }
+    
+    
     
     /**
      * This function will fill the requested pay period with hours in the order
@@ -225,7 +232,7 @@ public class FiscalYear
     public double getTotalHours()
     {
         double total = 0.0;
-        for (int i = 0; i < 26; i++)
+        for (int i = 0; i < this.payPeriods.size(); i++)
         {
             total += this.getPeriodHours(i);
         }
@@ -235,7 +242,7 @@ public class FiscalYear
     public double getDoubletimeHours()
     {
         double total = 0.0;
-        for (int i = 0; i < 26; i++)
+        for (int i = 0; i < this.payPeriods.size(); i++)
         {
             total += this.getPeriodDoubletime(i);
         }
@@ -245,10 +252,17 @@ public class FiscalYear
     public double getOvertimeHours()
     {
         double total = 0.0;
-        for (int i = 0; i > 26; i++)
+        for (int i = 0; i < this.payPeriods.size(); i++)
         {
             total += this.getPeriodHours(i);
         }
         return total;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Fiscal Year: " + this.getYear() + " Hours: " + this.getTotalHours();
+    }
+    
 }
