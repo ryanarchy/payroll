@@ -1,2 +1,2 @@
 # payroll
-test<script>alert('xss')</script>test
+test<div></div>test
