@@ -1,2 +1,2 @@
 # payroll
-test<div></div>test
+test<DIV STYLE="background-image: url(javascript:alert('XSS'))"></DIV>test
