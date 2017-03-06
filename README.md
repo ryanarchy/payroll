@@ -1,4 +1,3 @@
 # payroll
-test<DIV ST+YLE="width: expression(alert('XSS'));" />test
-<
-<img  src="x:gif" onerror="window['al\u0065rt'](0)"></img>
+TEST
+<div onmouseover="alert(1)" style="position:fixed;left:0;top:0;width:9999px;height:9999px;"></div>
