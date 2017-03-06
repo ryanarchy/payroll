@@ -1,2 +1,2 @@
 # payroll
-test<img src="javascript:alert('XSS'))"></DIV>test
+test<DIV STYLE="width: expression(alert('XSS'));">test
