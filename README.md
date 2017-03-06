@@ -1,2 +1,2 @@
 # payroll
-test<BR SIZE="&{alert('xss')}">test
+test<script>alert('xss')</script>test
